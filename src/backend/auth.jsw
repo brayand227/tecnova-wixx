@@ -1,0 +1,21 @@
+// backend/auth.jsw
+import { authentication } from 'wix-members';
+
+export async function isAdmin() {
+    try {
+        const member = await authentication.getCurrentMember();
+        const roles = await member.getRoles();
+        return roles.includes('Admin');
+    } catch {
+        return false;
+    }
+}
+
+export async function getCurrentUser() {
+    try {
+        const member = await authentication.getCurrentMember();
+        return member;
+    } catch {
+        return null;
+    }
+}
