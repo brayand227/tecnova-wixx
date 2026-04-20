@@ -18,6 +18,9 @@ async function loadProduct(productId) {
     $w('#productName').text = currentProduct.nombre;
     $w('#productPrice').text = `$${currentProduct.precio}`;
     $w('#productDescription').text = currentProduct.descripcion;
+     
+
+
     
     if (currentProduct.imagenPrincipal) {
         $w('#productImage').src = currentProduct.imagenPrincipal;
